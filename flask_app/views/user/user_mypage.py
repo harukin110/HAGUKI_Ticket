@@ -10,24 +10,9 @@ infoMessages = InfoMessages()
 errorMessages = ErrorMessages()
 
 # マイページの表示
-@app.route("/user_user_mypage", methods=["GET", "POST"])
+@app.route("/user_mypage", methods=["GET", "POST"])
 @is_staff_login
 def mypage():
-    return render_template("/user/user_mypage.html")##変更が必要
-
-
-
-#myチケット一覧画面
-@app.route("/user_user_my_ticket", methods=["GET", "POST"])
-@is_staff_login
-def my_ticket():
-    return render_template("user/user_ticket.html")##変更が必要
-
-
-#myチケット詳細画面
-@app.route("/user_user_my_ticket", methods=["GET", "POST"])
-@is_staff_login
-def ticket_detail():
-    return render_template("user/user_ticket_detail.html")##変更が必要
+    return render_template("/user/mypage/user_mypage.html")
 
 

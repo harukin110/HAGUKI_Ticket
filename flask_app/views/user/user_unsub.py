@@ -9,21 +9,21 @@ infoMessages = InfoMessages()
 # エラーメッセージクラスのインスタンス作成
 errorMessages = ErrorMessages()
 
-
-# 新規会員登録
-@app.route("/user_signup", methods=["GET", "POST"])
-def user_signup():
-    return render_template("/user/signup/user_signup.html")
-
-
-# 新規会員登録確認画面
-@app.route("/user_signup_check", methods=["GET", "POST"])
-def user_signup_check():
-    return render_template("/user/signup/user_signup_check.html")
-
-# 新規会員登録完了
-@app.route("/user_signup_comp", methods=["GET", "POST"])
-def user_signup_comp():
-    return render_template("/user/signup/user_signup_comp.html")
+#会員退会
+@app.route("/user_unsub", methods=["GET", "POST"])
+@is_staff_login
+def user_info():
+    return render_template("/user/mypage/unsub/user_unsub.html")
 
 
+#会員退会確認
+@app.route("/user_unsub", methods=["GET", "POST"])
+@is_staff_login
+def user_info():
+    return render_template("/user/mypage/unsub/user_unsub_check.html")
+
+#会員退会完了
+@app.route("/user_unsub", methods=["GET", "POST"])
+@is_staff_login
+def user_info():
+    return render_template("/user/mypage/unsub/user_unsub_comp.html")
