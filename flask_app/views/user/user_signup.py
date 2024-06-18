@@ -24,3 +24,7 @@ def user_user_signup():
     if request.methods == 'POST':#登録を完了が押されたら
         redirect(url_for("entry"))
     return render_template("/user/user_signup_confirm.html")##変更が必要##
+
+
+
+
