@@ -23,12 +23,12 @@
 			</div>
 			<div class="site_title">
 				<a class="heads" href="{{url_for('staff_staff_top')}}"><img src="/static/images/logo_small.png" alt="ムジクロチケット"></a>
-				<p class="heads">
-					{% if session.logged_in_staff %}
-					<input id="logout_button" type="button" value="ログアウト"
-						onClick="location.href=`{{url_for('logout_staff')}}`">
-					{% endif %}
-				</p>
+				<div class="heads">
+					<a class="imgs" href="{{url_for('staff_staff_top')}}"><img src="/static/images/user_info.png"></a>
+					<a class="imgs" href="{{url_for('staff_staff_top')}}"><img src="/static/images/ticket.png"></a>
+					<a class="imgs" href="{{url_for('logout_staff')}}"><img src="/static/images/logout.png"></a>
+
+				</div>
 			</div>
 
 			<div>

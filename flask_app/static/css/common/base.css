@@ -48,7 +48,12 @@ header .site_title {
 }
 
 header .site_title .heads {
-	
+	display: flex;
+	margin-left: 10px;
+}
+
+header .site_title .heads .imgs {
+	margin-right: 25px;
 }
 
 /* ログイン・ログアウトボタン表示領域 */
@@ -66,8 +71,11 @@ header .user_infomation {
 header img {
 	max-width: 100%;
 	margin: auto;
-	
-
+}
+header img:hover {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	max-width: 100%;
+	margin: auto;
 }
 
 /* --------------------------------------------------
