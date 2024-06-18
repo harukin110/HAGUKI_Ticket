@@ -14,5 +14,5 @@ errorMessages = ErrorMessages()
 @app.route("/user_login", methods=["GET", "POST"])
 def user_login():
     if request.methods == 'POST':
-        redirect(url_for("mypage"))##ボタン押されたらマイページへ
-    return render_template("/user/login/user_login.html")#ログイン画面へ
+        redirect(url_for("mypage"))
+    return render_template("/user/login/user_login.html")
