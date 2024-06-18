@@ -11,6 +11,6 @@ errorMessages = ErrorMessages()
 
 
 # スタッフログイン
-@app.route("/user_user_login", methods=["GET", "POST"])
-def user_user_login():
-    return render_template("/user/user_login.html")
+@app.route("/user_user_signup", methods=["GET", "POST"])
+def user_user_signup():
+    return render_template("/user/signup/user_signup.html")
