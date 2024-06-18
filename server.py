@@ -9,6 +9,9 @@ import flask_app.views.staff.staff_reservation
 import flask_app.views.staff.staff_ticket
 import flask_app.views.staff.staff_event_category
 import flask_app.views.staff.staff_event
+import flask_app.views.user.user_login
+import flask_app.views.user.user_signup
+
 
 app.secret_key = 'hoge'
 
