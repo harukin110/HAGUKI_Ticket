@@ -22,14 +22,15 @@
 			<div class="color_top">
 			</div>
 			<div class="site_title">
-				<a href="{{url_for('staff_staff_top')}}"><img src="/static/images/logo_small.png" alt="ムジクロチケット"></a>
+				<a class="heads" href="{{url_for('staff_staff_top')}}"><img src="/static/images/logo_small.png" alt="ムジクロチケット"></a>
+				<p class="heads">
+					{% if session.logged_in_staff %}
+					<input id="logout_button" type="button" value="ログアウト"
+						onClick="location.href=`{{url_for('logout_staff')}}`">
+					{% endif %}
+				</p>
 			</div>
-			<p>
-				{% if session.logged_in_staff %}
-				<input id="logout_button" type="button" value="ログアウト"
-					onClick="location.href=`{{url_for('logout_staff')}}`">
-				{% endif %}
-			</p>
+
 			<div>
 				<hr>
 			</div>
