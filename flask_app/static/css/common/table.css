@@ -11,6 +11,7 @@
 	border: solid 1px black;
 	table-layout: fixed;
 	word-break: break-all;
+	margin: auto;
 }
 
 #list_area th {
