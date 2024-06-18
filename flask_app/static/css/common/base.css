@@ -83,6 +83,7 @@ header img:hover {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 	max-width: 100%;
 	margin: auto;
+	opacity: 0.5;
 }
 
 /* --------------------------------------------------
@@ -98,8 +99,9 @@ nav {
 * メインコンテンツ領域
 ---------- */
 main {
-	width: 100%;
+	width: 90%;
 	padding-bottom: 40px; /* フッターの長さ分 画面下端に余白を設ける */
+	margin: auto;
 }
 
 main h1 {
