@@ -33,7 +33,7 @@ header {
 
 header .color_top {
 	background: linear-gradient(to right, #FFCC99, #ee7800);
-	height: 45px;
+	height: 35px;
 }
 
 
@@ -41,10 +41,9 @@ header .color_top {
 /* ロゴ表示領域 */
 header .site_title {
 	width: 100%;
-	padding-top: 5px;
-	padding-left: 5px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 header .site_title .heads {
@@ -54,6 +53,13 @@ header .site_title .heads {
 
 header .site_title .heads .imgs {
 	margin-right: 25px;
+	width: 60px;
+	align-items: center;
+    display: flex;
+}
+
+header .site_title .heads .logo {
+	width: 130px;
 }
 
 /* ログイン・ログアウトボタン表示領域 */
@@ -71,6 +77,7 @@ header .user_infomation {
 header img {
 	max-width: 100%;
 	margin: auto;
+	transition: 0.3s;
 }
 header img:hover {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
