@@ -1,0 +1,51 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<!-- ナビゲーション領域 -->
+
+<main>
+    <div class="container">
+      <h1 id="main_title">
+        MYチケット一覧
+      </h1>
+  
+      <div id="list_area" class="base_pattern">
+        <div id="output_list_table">
+          <!-- ここに一覧表を表示する -->
+          <table border-collapse: collapse;>
+            <tbody>
+          
+             
+              <tr>
+                <form method="post">
+                  <td class="event_category_name">def read_ticket():
+                    mst_ticket = Mst_ticket.query.order_by(
+                        Mst_ticket.ticket_id.desc()).all()
+                    return mst_ticket</td>
+                  <!-- hidden属性の項目 -->
+                  <input name="event_category_name" type="hidden" value="{{ event_category.event_category_name }}">
+                  <input name="event_category_id" type="hidden" value="{{ event_category.event_category_id }}">
+  
+                  <td class="action_button">
+                    <div>
+                      <input type="submit" formaction="{{ url_for('input_event_category', mode='update') }}"
+                        class="half_button" value="詳細" />
+                    
+                      <input type="submit" formaction="{{ url_for('confirm_event_category', mode='delete') }}"
+                        class="half_button" value="キャンセル" />
+                 
+                    </div>
+                  </td>
+                </form>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+{% endblock %}
