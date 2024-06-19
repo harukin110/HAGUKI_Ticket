@@ -2,28 +2,61 @@
 
 {% block body %}
 
+<nav>
+    <div class="container">
+      <p class="menu">
+        <a href="{{ url_for('entry') }}">ログイン</a>
+        >
+        <a>新規会員登録</a>
+      </p>
+    </div>
+  </nav>
+
 <!-- メインコンテンツ領域 -->
-
-
 <main>
-	<div class="container">
-		<h1 id="main_title">
-			<!-- ここに ページタイトルを表示する -->
-		</h1>
-		
+    <div class="container">
+      <h1 id="main_title">
+        <!-- ここに ページタイトルを表示する -->
+      </h1>
+      <h2 id="main_sub_title">
+		新規会員登録
+	  </h2>
 
-		<form action="/login_staff" method="post" name="inputForm">
-			<div id="form_area" class="base_pattern">
-				<p>アカウント名<span class="required">（必須）</span>：</p>
-				<p><input name="staff_account" type="text" value="" id="InputTitle"></p>
+	  <p> ※全ての項目の入力が必須です。</p>
 
-				<p>パスワード<span class="required">（必須）</span>：</p>
-				<p><input name="staff_password" type="password" value=""></p>
-			</div>
-			<div id="button_area">
-				<input type="submit" class="go_next_button" value="ログイン">
-			</div>
-		</form>
-	</div>
-</main>
+      <form id="inputForm" method="post" class="required">
+        <div id="form_area" class="base_pattern">
+          <p>メールアドレス</p>
+          <p><input name="customer_account" type="text" value="{{ customer_account }}"></p>
+
+          <p>パスワード</p>
+          <p><input name="customer_password" type="text" value="{{ customer_password }}"></p>
+
+          <p>氏名</p>
+          <p><input name="customer_name" type="text" value="{{ customer_name }}"></p>
+
+          <p>郵便番号</p>
+          <p><input name="customer_zipcode" type="text" value="{{ customer_zipcode }}"></p>
+
+          <p>住所</p>
+          <p><input name="customer_address" type="text" value="{{ customer_address }}"></p>
+
+          <p>電話番号</p>
+          <p><input name="customer_phone" type="text" value="{{ customer_phone}}"></p>
+
+          <p>生年月日</p>
+          <p><input name="customer_birth" type="date" value="{{ customer_birth}}"></p>
+
+
+          <!-- hidden属性の項目 いらない気がする-->
+          <input name="customer_id" type="hidden" value="{{ customer_id }}">
+        </div>
+        <div id="button_area">
+          <input type="submit" formaction="{{url_for('user_signup_check')}}" class="go_next_button" value="入力内容を確定する">
+          <input type="button" class="other_button" value="トップページへ戻る" onclick="location.href=`{{url_for('entry')}}`">
+        </div>
+      </form>
+    </div>
+  </main>
+
 {% endblock %}
