@@ -26,6 +26,7 @@ def create_customer_script(params):
             customer_address=param["customer_address"],
             customer_phone=param["customer_phone"],
             customer_payment=param["customer_payment"],
+            customer_birth =param["customer_birth"],
         )
         db.session.add(mst_customer)
         db.session.commit()
@@ -63,6 +64,7 @@ def update_customer(customer_id, request):
     customer.customer_address = request.form["customer_address"]
     customer.customer_phone = request.form["customer_phone"]
     customer.customer_payment = request.form["customer_payment"]
+    customer.customer_birth = request.form["customer_birth"]
 
     db.session.merge(customer)
     db.session.commit()

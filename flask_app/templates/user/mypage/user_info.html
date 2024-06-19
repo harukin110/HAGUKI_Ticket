@@ -1,0 +1,66 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<!-- 機能共用 CSS -->
+<link rel="stylesheet" href="/static/css/staff/staff_customer_manage.css">
+
+<!-- ナビゲーション領域 -->
+<nav>
+  <div class="container">
+    <p class="menu">
+      <a href="{{ url_for('user_mypage') }}">マイページ</a>
+      >会員情報
+      
+    </p>
+  </div>
+</nav>
+
+<!-- メインコンテンツ領域 -->
+<main>
+  <div class="container">
+    <h1 id="main_title">
+      <!-- ここに ページタイトルを表示する -->
+    </h1>
+    <h2 id="main_sub_title">会員情報</h2>
+
+      <div id="form_area" class="base_pattern">
+        <div class="">メアド：</div>
+        <div class="info">{{ customer_account }}</div>
+
+        <div class="">パスワード：</div>
+        <div class="info">{{ customer_password }}</div>
+
+        <div class="">会員名：</div>
+        <div class="info">{{ customer_name }}</div>
+
+        <div class="">郵便番号</div>
+        <div class="info">{{ customer_zipcode }}</div>
+
+        <div class="">住所</div>
+        <div class="info">{{ customer_address }}</div>
+
+        <div class="">電話番号：</div>
+        <div class="info">{{ customer_phone }}</div>
+
+        <div class="">生年月日：</div>
+        <div class="info">{{ customer_birth }}</div>
+
+
+        <!-- hidden属性の項目 -->
+        <input name="customer_id" type="hidden" value="{{ customer_id }}">
+      </div>
+
+      <div>
+        <input type="submit" formaction="{{ url_for('info_change', mode='update') }}" class="half_button"
+          value="変更" />
+        {% if customer.isDeletable != false %}
+        <input type="submit" formaction="{{ url_for('unsub_check', mode='delete') }}"
+          class="half_button" value="退会" />
+        {% endif %}
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock %}

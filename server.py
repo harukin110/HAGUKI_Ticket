@@ -11,6 +11,7 @@ import flask_app.views.staff.staff_event_category
 import flask_app.views.staff.staff_event
 import flask_app.views.user.user_login
 import flask_app.views.user.user_signup
+import flask_app.views.user.user_mypage
 
 
 app.secret_key = 'hoge'
