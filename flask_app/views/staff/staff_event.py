@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect, session, url_for, Markup
+from flask import render_template, flash, request, redirect, session, url_for
 from flask_app.__init__ import app
 from flask_app.messages import ErrorMessages, InfoMessages
 from flask_app.models.functions.event import create_event, delete_event, read_event, read_event_event_category, read_event_event_name, update_event

@@ -1,5 +1,5 @@
 from operator import itemgetter
-from flask import flash, render_template, request, redirect, Markup
+from flask import flash, render_template, request, redirect
 from flask_app.__init__ import app
 from flask_app.messages import ErrorMessages, InfoMessages
 from flask_app.models.functions.event_category import read_event_category

@@ -15,3 +15,8 @@ def user_user_top():
 @app.route("/user_user_top", methods=["GET", "POST"])
 def user_user_top():
     return render_template("/user/mypage/user_mypage.html")
+
+def event_check():
+    return
+
+
