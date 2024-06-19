@@ -12,8 +12,26 @@ errorMessages = ErrorMessages()
 #会員情報
 @app.route("/user_info", methods=["GET", "POST"])
 @is_staff_login
-def user_info():
-    return render_template("/user/mypage/user_info.html")
+def user_info(mode):
+    customer_id = request.form['customer_id']
+    customer_account = request.form['customer_account']
+    customer_password = request.form['customer_password']
+    customer_name = request.form['customer_name']
+    customer_zipcode = request.form['customer_zipcode']
+    customer_address = request.form['customer_address']
+    customer_phone = request.form['customer_phone']
+    customer_payment = request.form['customer_payment']
+
+    return render_template("/user/mypage/user_info.html",
+                           customer_id=customer_id,
+                           customer_name=customer_name,
+                           customer_account=customer_account,
+                           customer_password=customer_password,
+                           customer_zipcode=customer_zipcode,
+                           customer_address=customer_address,
+                           customer_phone=customer_phone,
+                           customer_payment=customer_payment,
+                           mode=mode)
 
 #会員情報変更入力
 @app.route("/user_info_change", methods=["GET", "POST"])
