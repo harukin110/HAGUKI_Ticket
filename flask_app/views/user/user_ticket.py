@@ -9,7 +9,7 @@ from flask_app.models.mst_event import Mst_event
 
 #myチケット一覧画面
 @app.route("/my_ticket", methods=["GET", "POST"])
-# @is_staff_login
+@is_staff_login
 def my_ticket():
     return render_template("user/ticket_manage/my_ticket.html")
 
@@ -36,3 +36,9 @@ def delete_ticket(ticket_id):
     db.session.delete(ticket)
     db.session.commit()
     return render_template("user/ticket_manage/cancel/ticket_cancel_comp.html")
+
+@app.route("/ticket_cancel_com", methods=["GET", "POST"])
+@is_staff_login
+def ticket_cancel():
+    return render_template("user/ticket_manage/cancel/ticket_cancel.html")
+
