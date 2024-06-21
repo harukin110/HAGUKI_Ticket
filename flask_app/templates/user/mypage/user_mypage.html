@@ -1,17 +1,47 @@
 {% extends "layout_staff.html" %}
 
 {% block body %}
-<h1>ここがマイページ(イベント一覧)です</h1>
-<p>
-    <input type="button" class="menu_button" value="イベント詳細へ"
-        onclick="window.location.href=`{{url_for('event_info')}}`">
-</p>
-<p>
-    <input type="button" class="menu_button" value="会員情報へ" 
-        onclick="window.location.href=`{{url_for('user_info')}}`">
-</p>
-<p>
-    <input type="button" class="menu_button" value="MYチケット一覧へ" 
-        onclick="window.location.href=`{{url_for('my_ticket')}}`">
-</p>
+<script src="{{ url_for('static', filename='js/mypage.js') }}"></script>
+<!-- メインコンテンツ領域 -->
+<main>
+    <div class="container">
+      <div style="display: flex;">
+        <h1>
+            最新のイベント一欄
+        </h1>
+      </div>
+      {% if mst_event %}
+      {% for event in mst_event %}
+              <div class="conts">
+                  <form name="lp01_01" method="post">
+                    <a class="mypage">
+                      <div class="event_date">{{ event.event_date }}</div>
+                      <div class="event_category_name">
+                          {% for event_category in mst_event_category %}
+                              {% if event.event_category_id == event_category.event_category_id %}
+                                  {{ event_category.event_category_name }}
+                              {% endif %}
+                          {% endfor %}
+                      </div>
+                      <div class="event_name">{{ event.event_name }}</div>
+                      <div class="event_place">{{ event.event_place }}</div>
+                      <!-- hidden属性の項目 -->
+                      <input name="event_date" type="hidden" value="{{ event.event_date }}">
+                      <input name="event_category_id" type="hidden" value="{{ event.event_category_id }}">
+                      <input name="event_name" type="hidden" value="{{ event.event_name }}">
+                      <input name="event_place" type="hidden" value="{{ event.event_place }}">
+                      <input name="event_id" type="hidden" value="{{ event.event_id }}">
+                      <input name="event_overview" type="hidden" value="{{ event.event_overview }}">
+                      <input type="submit" formaction="{{url_for('event_check')}}"/>
+                    </a>  
+                  </form>
+              </div>
+
+      {% endfor %}
+      {% else %}
+          イベントが存在しません。
+      {% endif %}
+  
+      </div>
+  </main>
 {% endblock %}
