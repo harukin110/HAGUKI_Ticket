@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect, session
+from flask import render_template, flash, request, redirect, session,url_for
 from flask_app.__init__ import app
 from flask_app.messages import ErrorMessages, InfoMessages
 from flask_app.models.functions.staff import read_staff_staff_account
@@ -45,7 +45,7 @@ def login_staff():
         session["logged_in_staff_id"] = staff.staff_id
         session["logged_in_staff_name"] = staff.staff_name
         flash(infoMessages.i05())
-        return redirect("/staff_staff_top")
+        return redirect(url_for("staff_staff_top"))
 
 
 # スタッフログアウト
