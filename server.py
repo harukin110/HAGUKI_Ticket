@@ -13,16 +13,11 @@ import flask_app.views.user.user_event
 import flask_app.views.user.user_info
 import flask_app.views.user.user_login
 import flask_app.views.user.user_mypage
-
 import flask_app.views.user.user_event
 import flask_app.views.user.user_info
 import flask_app.views.user.user_ticket
-
 import flask_app.views.user.user_signup
-import flask_app.views.user.user_ticket
 #import flask_app.views.user.user_unsub
-
-
 
 
 app.secret_key = 'hoge'

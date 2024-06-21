@@ -18,7 +18,6 @@ def user_info():
     customer_account = session["logged_in_customer_account"] 
     mst_custemer=read_customer_customer_account(customer_account)
     print (mst_custemer)
-    return render_template("/user/mypage/user_info.html")
 
 #会員情報変更入力
 @app.route("/user_info_change", methods=["GET", "POST"])

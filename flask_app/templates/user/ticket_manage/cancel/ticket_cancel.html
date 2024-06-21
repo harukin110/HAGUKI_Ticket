@@ -1,0 +1,43 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<!-- パンくずリスト -->
+<nav>
+    <div class="container">
+      <p class="menu">
+        <a href="{{ url_for('mypage') }}">マイページ</a>
+        >
+        <a href="{{ url_for('my_ticket') }}">MYチケット一覧</a>
+        >
+        <a>チケットキャンセル</a>
+      </p>
+    </div>
+  </nav>
+
+<!-- メインコンテンツ領域 -->
+<main>
+  <div class="container">
+    <h2 id="main_sub_title">本当にキャンセルしますか？</h2>
+  </div>
+
+  <div>イベント名</div>
+  <div>イベントカテゴリ</div>
+  <div>日付</div>
+  <div>場所</div>
+  <div>概要</div>
+  <div>席種</div>
+  <div>金額</div>
+
+<!-- 「はい」クリック時にチケット情報を削除し、削除完了画面を表示 -->
+<form action="{{ url_for('delete_ticket') }}" method="post">
+    <button type="submit" class="menu_button">はい</button>
+    </form>
+
+<!-- 「いいえ」クリック時にMYチケット一覧を表示 -->
+<p>
+    <input type="button" class="menu_button" value="いいえ"
+        onclick="window.location.href=`{{url_for('ticket_detail')}}`">
+</p>
+
+{% endblock %}
