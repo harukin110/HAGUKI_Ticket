@@ -13,11 +13,6 @@ from flask_app.models.mst_event import Mst_event
 def my_ticket():
     return render_template("user/ticket_manage/my_ticket.html")
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> refs/remotes/origin/develop
 #myチケット詳細画面
 @app.route("/ticket_info", methods=["GET", "POST"])
 @is_staff_login
