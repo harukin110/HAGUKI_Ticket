@@ -1,0 +1,19 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<!-- 機能共用 CSS -->
+<link rel="stylesheet" href="/static/css/staff/staff_customer_manage.css">
+
+<!-- ナビゲーション領域 -->
+<nav>
+</nav>
+
+<!-- メインコンテンツ領域 -->
+<main>
+  <p>
+    <input type="button" class="menu_button" value="退会" onClick="window.location.href=`{{url_for('user_delete')}}`">
+  </p>
+</main>
+
+{% endblock %}

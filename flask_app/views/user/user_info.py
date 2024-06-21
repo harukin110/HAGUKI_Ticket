@@ -11,7 +11,7 @@ errorMessages = ErrorMessages()
 
 #会員情報
 @app.route("/user_info", methods=["GET", "POST"])
-@is_staff_login
+# @is_staff_login
 def user_info():
     return render_template("/user/mypage/user_info.html")
 
