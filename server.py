@@ -9,12 +9,20 @@ import flask_app.views.staff.staff_reservation
 import flask_app.views.staff.staff_ticket
 import flask_app.views.staff.staff_event_category
 import flask_app.views.staff.staff_event
+import flask_app.views.user.user_event
+import flask_app.views.user.user_info
 import flask_app.views.user.user_login
-import flask_app.views.user.user_signup
 import flask_app.views.user.user_mypage
+<<<<<<< HEAD
 import flask_app.views.user.user_event
 import flask_app.views.user.user_info
 import flask_app.views.user.user_ticket
+=======
+import flask_app.views.user.user_signup
+import flask_app.views.user.user_ticket
+#import flask_app.views.user.user_unsub
+
+>>>>>>> origin/ishigami
 
 
 app.secret_key = 'hoge'

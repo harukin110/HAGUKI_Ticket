@@ -1,7 +1,6 @@
 from flask_app.database import db
 from flask_app.models.mst_customer import Mst_customer
 
-
 # 会員　新規登録
 def create_customer(request):
     mst_customer = Mst_customer(
@@ -26,7 +25,7 @@ def create_customer_script(params):
             customer_address=param["customer_address"],
             customer_phone=param["customer_phone"],
             customer_payment=param["customer_payment"],
-            customer_birth =param["customer_birth"],
+            customer_birth =param["customer_birth"]
         )
         db.session.add(mst_customer)
         db.session.commit()
