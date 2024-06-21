@@ -24,6 +24,6 @@ def user_delete_check():
 
 #会員退会完了
 @app.route("/user_unsub/cmp", methods=["GET", "POST"])
-@is_staff_login
+# @is_staff_login
 def user_comp():
     return render_template("/user/mypage/unsub/user_unsub_comp.html")
