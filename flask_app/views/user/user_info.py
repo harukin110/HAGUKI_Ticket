@@ -15,7 +15,7 @@ errorMessages = ErrorMessages()
 @app.route("/user_info", methods=["GET", "POST"])
 # @is_staff_login
 def user_info():
-    customer_account = "customer1@example.com"
+    customer_account = session["logged_in_customer_account"] 
     mst_custemer=read_customer_customer_account(customer_account)
     print (mst_custemer)
     return render_template("/user/mypage/user_info.html")
