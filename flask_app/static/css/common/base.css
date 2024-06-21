@@ -21,7 +21,6 @@
 	width: 100%;
 	margin: 0px auto;
 	position: relative;
-
 }
 
 /* --------------------------------------------------
@@ -35,7 +34,6 @@ header .color_top {
 	background: linear-gradient(to right, #FFCC99, #ee7800);
 	height: 35px;
 }
-
 
 
 /* ロゴ表示領域 */
@@ -57,6 +55,27 @@ header .site_title .heads .imgs {
 	align-items: center;
     display: flex;
 }
+
+.mypage {
+	margin: 20px;
+	transition: 0.3s;
+	border-radius: 3px;
+}
+.mypage:hover {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	margin: auto;
+	opacity: 0.5;
+}
+.mypage form{
+	background-color: #f0f0f0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+
+}
+
+.mujiclo-staff-body{
+
+}
+
 
 header .site_title .heads .logo {
 	width: 130px;
