@@ -5,6 +5,10 @@ from flask_app import database
 from flask_app.models.functions.staff import read_staff
 from flask_app.models.functions.staff import create_staff_script
 
+class DropDB(Command):
+    def run(self):
+        database.db.drop_all()
+
 
 class InitDB(Command):
     "create database"
@@ -31,6 +35,7 @@ class InitDB(Command):
                 "customer_address": "東京都保下区三布留町1-2コーポSAMPLE101",
                 "customer_phone": "00012345678",
                 "customer_payment": 1,
+                "customer_birth":"2024-06-19"
             }, {
                 "customer_account": "customer2@example.com",
                 "customer_password": "password",
@@ -39,6 +44,7 @@ class InitDB(Command):
                 "customer_address": "東京都保下区三布留町1-2コーポSAMPLE102",
                 "customer_phone": "00012345678",
                 "customer_payment": 0,
+                "customer_birth":"2024-06-19"
             }, {
                 "customer_account": "customer3@example.com",
                 "customer_password": "password",
@@ -47,6 +53,7 @@ class InitDB(Command):
                 "customer_address": "東京都保下区三布留町1-2コーポSAMPLE301",
                 "customer_phone": "00012345678",
                 "customer_payment": 2,
+                "customer_birth":"2024-06-19"
             }]
             create_customer_script(customer_datas)
 
