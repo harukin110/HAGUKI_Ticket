@@ -1,0 +1,9 @@
+{% extends "layout_staff.html" %}
+{% block body %}
+
+<h1>退会手続きが完了しました</h1>
+
+<div>またのご利用をお待ちしております。</div>
+
+<input type="button" class=".go_next_button" value="トップページへ" onClick="window.location.href=`{{url_for('entry')}}`">
+{% endblock %}

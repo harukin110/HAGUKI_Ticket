@@ -12,6 +12,7 @@ class Mst_customer(db.Model):
     customer_address = db.Column(db.String(50))
     customer_phone = db.Column(db.String(11))
     customer_payment = db.Column(db.String(1))
+    customer_birth = db.Column(db.Date())
 
     def __init__(
         self,
@@ -23,6 +24,7 @@ class Mst_customer(db.Model):
         customer_address=None,
         customer_phone=None,
         customer_payment=None,
+        customer_birth = None,
     ):
         self.customer_id = customer_id
         self.customer_account = customer_account
@@ -32,9 +34,10 @@ class Mst_customer(db.Model):
         self.customer_address = customer_address
         self.customer_phone = customer_phone
         self.customer_payment = customer_payment
+        self.customer_birth = customer_birth
 
     def __repr__(self):
-        return "<Mst_customer customer_id:{} customer_account:{} customer_password:{} customer_name:{} customer_zipcode:{} customer_address:{} customer_phone:{} customer_payment:{}>".format(
+        return "<Mst_customer customer_id:{} customer_account:{} customer_password:{} customer_name:{} customer_zipcode:{} customer_address:{} customer_phone:{} customer_payment:{} customer_birth:{} >".format(
             self.customer_id,
             self.customer_account,
             self.customer_password,
@@ -42,5 +45,6 @@ class Mst_customer(db.Model):
             self.customer_zipcode,
             self.customer_address,
             self.customer_phone,
-            self.customer_payment
+            self.customer_payment,
+            self.customer_birth
         )

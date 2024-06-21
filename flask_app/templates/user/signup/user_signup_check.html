@@ -1,0 +1,65 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<nav>
+    <div class="container">
+      <p class="menu">
+        <a href="{{ url_for('entry') }}">ログイン</a>
+        >
+        <a href="{{url_for('user_signup')}}">新規会員登録</a>
+        >
+        <a>新規会員登録内容確認</a>
+      </p>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="container">
+      <h1 id="main_title">
+        <!-- ここに ページタイトルを表示する -->
+      </h1>
+      <h2 id="main_sub_title">
+		新規会員登録
+	  </h2>
+
+	  <p> ※全ての項目の入力が必須です。</p>
+
+      <form id="inputForm" method="post" class="required">
+        <div id="form_area" class="base_pattern">
+          <p>メールアドレス</p>
+          <p><input name="customer_account" type="text" value="{{ customer_account }}" readonly="readonly"></p>
+
+          <p>パスワード</p>
+          <p><input name="customer_password" type="text" value="{{ customer_password }}" readonly="readonly"></p>
+
+          <p>氏名</p>
+          <p><input name="customer_name" type="text" value="{{ customer_name }}" readonly="readonly"></p>
+
+          <p>郵便番号</p>
+          <p><input name="customer_zipcode" type="text" value="{{ customer_zipcode }}" readonly="readonly"></p>
+
+          <p>住所</p>
+          <p><input name="customer_address" type="text" value="{{ customer_address }}" readonly="readonly"></p>
+
+          <p>電話番号</p>
+          <p><input name="customer_phone" type="text" value="{{ customer_phone}}" readonly="readonly"></p>
+
+          <p>生年月日</p>
+          <p><input name="customer_birth" type="date" value="{{ customer_birth}}" readonly="readonly"></p>
+
+
+          <!-- hidden属性の項目 いらない気がする-->
+          <input name="customer_id" type="hidden" value="{{ customer_id }}">
+        </div>
+        <div id="button_area">
+          <input type="submit" formaction="{{url_for('user_signup_comp')}}" class="go_next_button" value="入力内容を確定する">
+          <input type="button" class="other_button" value="トップページへ戻る" onclick="location.href=`{{url_for('entry')}}`">
+        </div>
+      </form>
+    </div>
+  </main>
+
+
+{% endblock %}

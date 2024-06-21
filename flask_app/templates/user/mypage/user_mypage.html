@@ -1,0 +1,17 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+<h1>ここがマイページ(イベント一覧)です</h1>
+<p>
+    <input type="button" class="menu_button" value="イベント詳細へ"
+        onclick="window.location.href=`{{url_for('event_info')}}`">
+</p>
+<p>
+    <input type="button" class="menu_button" value="会員情報へ" 
+        onclick="window.location.href=`{{url_for('user_info')}}`">
+</p>
+<p>
+    <input type="button" class="menu_button" value="MYチケット一覧へ" 
+        onclick="window.location.href=`{{url_for('my_ticket')}}`">
+</p>
+{% endblock %}
