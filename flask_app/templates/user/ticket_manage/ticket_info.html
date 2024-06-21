@@ -1,0 +1,26 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<main>
+ <a href="user_user_top">マイページ</a>><a href="my_ticket">チケット一覧</a>>チケット詳細
+
+  <div>
+    <h1>
+       チケット詳細
+    </h1>
+     
+    <input type="button" onClick="window.location.href=`{{ url_for('my_ticket')}}`"
+             class=".gonext" value="MYチケット一覧へ" />
+
+
+
+
+  </div>
+
+</main>
+
+
+
+
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect, session
+from flask import render_template, flash, request, redirect, session,url_for
 from flask_app.__init__ import app
 from flask_app.messages import ErrorMessages, InfoMessages
 from flask_app.models.functions.customer import read_customer_customer_account
@@ -45,7 +45,7 @@ def login_customer():
         session["logged_in_customer_id"] = customer.customer_id
         session["logged_in_customer_name"] = customer.customer_name
         flash(infoMessages.i05())
-        return redirect("/user_user_top")
+        return redirect(url_for("user_user_top"))
 
 
 # 会員ログアウト

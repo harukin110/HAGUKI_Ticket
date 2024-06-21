@@ -6,9 +6,10 @@ from flask_app.views.staff.common.staff_common import is_staff_login
 
 #myチケット一覧画面
 @app.route("/my_ticket", methods=["GET", "POST"])
-@is_staff_login
+# @is_staff_login
 def my_ticket():
     return render_template("user/ticket_manage/my_ticket.html")
+
 
 
 #myチケット詳細画面
