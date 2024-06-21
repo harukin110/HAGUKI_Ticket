@@ -10,20 +10,20 @@ infoMessages = InfoMessages()
 errorMessages = ErrorMessages()
 
 #会員退会
-@app.route("/user_unsub", methods=["GET", "POST"])
-@is_staff_login
-def user_info():
-    return render_template("/user/mypage/unsub/user_unsub.html")
+@app.route("/user_unsub/delete", methods=["GET", "POST"])
+# @is_staff_login
+def user_delete():
+    return render_template("/user/mypage/unsub/user_unsub_check.html")
 
 
 #会員退会確認
-@app.route("/user_unsub", methods=["GET", "POST"])
+@app.route("/user_unsub/delete_check", methods=["GET", "POST"])
 @is_staff_login
-def user_info():
+def user_delete_check():
     return render_template("/user/mypage/unsub/user_unsub_check.html")
 
 #会員退会完了
-@app.route("/user_unsub", methods=["GET", "POST"])
+@app.route("/user_unsub/cmp", methods=["GET", "POST"])
 @is_staff_login
-def user_info():
+def user_comp():
     return render_template("/user/mypage/unsub/user_unsub_comp.html")
