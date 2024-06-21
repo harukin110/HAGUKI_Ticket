@@ -1,5 +1,9 @@
+{% extends "layout_staff.html" %}
+{% block body %}
+
 <h1>退会手続きが完了しました</h1>
 
 <div>またのご利用をお待ちしております。</div>
 
-<button onclick="location.href='http://127.0.0.1:3000/flask_app/templates/index.html'">トップページへ</button>
+<input type="button" class=".go_next_button" value="トップページへ" onClick="window.location.href=`{{url_for('entry')}}`">
+{% endblock %}
