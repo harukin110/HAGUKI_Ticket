@@ -58,4 +58,4 @@ def logout_customer():
     session.pop("logged_in_customer_name", None)
 
     flash("ログアウトしました")
-    return redirect("/user_user_login")
+    return render_template("/index.html")

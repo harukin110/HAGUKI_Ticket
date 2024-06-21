@@ -1,0 +1,26 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<!-- 機能共用 CSS -->
+<link rel="stylesheet" href="/static/css/staff/staff_customer_manage.css">
+
+<!-- ナビゲーション領域 -->
+
+<!-- メインコンテンツ領域 -->
+<main>
+  <div class="container">
+    <h1 id="main_title">
+      <!-- ここに ページタイトルを表示する -->
+    </h1>
+    <p>申込みが完了しました</p>
+      </div>
+
+      <div id="button_area">
+        <input type="submit" formaction="{{ url_for('user_mypage', mode=mode) }}" class="go_next_button" value="マイページへ戻る">
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock %}
