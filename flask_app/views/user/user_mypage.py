@@ -1,4 +1,4 @@
-from flask import redirect, render_template, session
+from flask import redirect, render_template, session, request
 from flask_app.__init__ import app
 from flask_app.views.user.common.user_common import is_customer_login
 from flask_app.models.functions.event import  read_event, read_event_event_category, read_event_event_name
@@ -32,4 +32,16 @@ def user_user_top():
 
 @app.route("/user_user_top/event_check", methods=["GET", "POST"])
 def event_check():
-    return render_template("/user/event/event_app_check.html")
+    event_id = request.form['event_id']
+    event_name = request.form['event_name']
+    event_category_id = request.form['event_category_id']
+    event_date = request.form['event_date']
+    event_place = request.form['event_place']
+    event_overview = request.form['event_overview']
+
+    return render_template("/user/event/event_app_check.html",                               event_id=event_id,
+                               event_name=event_name,
+                               event_category_id=event_category_id,
+                               event_date=event_date,
+                               event_place=event_place,
+                               event_overview=event_overview)

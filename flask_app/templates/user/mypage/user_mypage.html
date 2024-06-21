@@ -1,6 +1,7 @@
 {% extends "layout_staff.html" %}
 
 {% block body %}
+<script src="{{ url_for('static', filename='js/mypage.js') }}"></script>
 <!-- メインコンテンツ領域 -->
 <main>
     <div class="container">
@@ -11,9 +12,9 @@
       </div>
       {% if mst_event %}
       {% for event in mst_event %}
-          <a class="mypage" href="{{ url_for('event_check') }}">
               <div class="conts">
-                  <form method="post">
+                  <form name="lp01_01" method="post">
+                    <a class="mypage">
                       <div class="event_date">{{ event.event_date }}</div>
                       <div class="event_category_name">
                           {% for event_category in mst_event_category %}
@@ -31,9 +32,11 @@
                       <input name="event_place" type="hidden" value="{{ event.event_place }}">
                       <input name="event_id" type="hidden" value="{{ event.event_id }}">
                       <input name="event_overview" type="hidden" value="{{ event.event_overview }}">
+                      <input type="submit" formaction="{{url_for('event_check')}}"/>
+                    </a>  
                   </form>
               </div>
-          </a>
+
       {% endfor %}
       {% else %}
           イベントが存在しません。
