@@ -20,7 +20,6 @@ import flask_app.views.user.user_signup
 #import flask_app.views.user.user_unsub
 
 
-
 app.secret_key = 'hoge'
 
 if __name__ == '__main__':
