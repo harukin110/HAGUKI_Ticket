@@ -1,0 +1,12 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<h3>チケットキャンセルが完了しました。</h3>
+
+<p>
+    <input type="button" class="menu_button" value="MYチケット一覧へ"
+        onclick="window.location.href=`{{url_for('my_ticket')}}`">
+</p>
+
+{% endblock %}

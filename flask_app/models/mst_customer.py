@@ -37,7 +37,7 @@ class Mst_customer(db.Model):
         self.customer_birth = customer_birth
 
     def __repr__(self):
-        return "<Mst_customer customer_id:{} customer_account:{} customer_password:{} customer_name:{} customer_zipcode:{} customer_address:{} customer_phone:{} customer_payment:{}>".format(
+        return "<Mst_customer customer_id:{} customer_account:{} customer_password:{} customer_name:{} customer_zipcode:{} customer_address:{} customer_phone:{} customer_payment:{} customer_birth:{} >".format(
             self.customer_id,
             self.customer_account,
             self.customer_password,

@@ -1,0 +1,19 @@
+{% extends "layout_staff.html" %}
+
+{% block body %}
+
+<main>
+    <div class="container">
+      <h2 id="main_sub_title">
+		新規会員登録が完了しました。
+	  </h2>
+      <form>
+        <div id="button_area">
+            <input type="button" class="other_button" value="トップページへ戻る" onclick="location.href=`{{url_for('entry')}}`">        </div>
+      </form>
+    </div>
+  </main>
+
+
+
+{% endblock %}
